@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select A Package - Vetty Background Screening</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="bg-[#f1f5f9] min-h-screen text-[#1e293b] flex items-center justify-center p-2 md:p-6">
+
+  <!-- Streamlined Centered Configuration Dashboard -->
+  <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden relative">
+    
+    <!-- Top Header Navigation -->
+    <div class="bg-slate-50 border-b border-slate-100 px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-extrabold text-sm">V</div>
+        <div>
+          <h1 class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Candidate Screenings</h1>
+          <p class="text-sm font-bold text-slate-800">New Order Request</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs text-slate-500 font-medium">Session Active</span>
+      </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="p-6 md:p-8">
+      <h2 class="text-lg font-bold text-[#1e293b] mb-6">Select A Package</h2>
+
+      <!-- Setup Fields Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mb-8">
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5">Department<span class="text-red-500 ml-0.5">*</span></label>
+          <div class="relative">
+            <select class="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-700 appearance-none focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+              <option>Talent Acquisition</option>
+              <option>Engineering Dev</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5">Location<span class="text-red-500 ml-0.5">*</span></label>
+          <div class="relative">
+            <select class="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-700 appearance-none focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+              <option>New Newyork</option>
+              <option>San Francisco</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5">Package<span class="text-red-500 ml-0.5">*</span></label>
+          <div class="relative">
+            <select class="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-700 appearance-none focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition">
+              <option>D</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5">ID</label>
+          <input type="text" placeholder="ID" class="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" />
+        </div>
+      </div>
+
+      <!-- Main Dual Selector Block -->
+      <div class="border border-slate-200 rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[260px]">
+        
+        <!-- Left Side Navigation Tabs -->
+        <div class="md:col-span-3 bg-slate-50 border-r border-slate-200 p-4 flex flex-col gap-2">
+          
+          <div id="tabIdentityIndicator" class="flex justify-between items-center px-3 py-2.5 rounded-lg bg-white shadow-sm border border-slate-100">
+            <span class="text-xs font-bold text-slate-700">Identity</span>
+            <div class="w-4 h-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+            </div>
+          </div>
+
+          <div id="tabBasicCriminalIndicator" class="flex justify-between items-center px-3 py-2.5 rounded-lg bg-white shadow-sm border border-slate-100">
+            <span class="text-xs font-bold text-slate-700">Basic Criminal</span>
+            <div class="w-4 h-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+            </div>
+          </div>
+
+          <div id="motorVehicleTab" class="hidden justify-between items-center px-3 py-2.5 rounded-lg bg-white shadow-sm border border-slate-100">
+            <span class="text-xs font-bold text-slate-700">Motor Vehicle</span>
+            <div class="w-4 h-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+            </div>
+          </div>
+
+          <div id="advancedCriminalTab" class="hidden justify-between items-center px-3 py-2.5 rounded-lg bg-white shadow-sm border border-slate-100">
+            <span class="text-xs font-bold text-slate-700">Advanced Criminal</span>
+            <div class="w-4 h-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+            </div>
+          </div>
+
+          <button id="btnModify" class="mt-4 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-4 rounded-lg shadow transition">
+            <svg class="w-3 h-3 fill-white" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+            Modify
+          </button>
+        </div>
+
+        <!-- Right Side Configuration Summary Details -->
+        <div class="md:col-span-9 p-6 bg-white flex flex-col gap-5">
+          
+          <!-- Identity Group -->
+          <div id="mainIdentitySection">
+            <h4 class="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-1.5">Identity</h4>
+            <!-- Clickable Accordion Bar -->
+            <div id="btnMainIdentityToggle" class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex justify-between items-center text-xs cursor-pointer select-none hover:bg-slate-100 transition">
+              <span class="font-bold text-slate-600 flex items-center gap-2">
+                <svg id="iconMainIdentityCaret" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                Checks Included
+              </span>
+              <span class="text-[9px] font-bold text-slate-400 uppercase">Renewal</span>
+            </div>
+            <div id="wrapperMainIdentityList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
+              <div id="mainIdentityDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
+                <span>Social Security Trace</span>
+                <span class="text-slate-400 italic font-semibold">Included</span>
+              </div>
+              <div id="mainIdentityCustomList"></div>
+            </div>
+          </div>
+
+          <!-- Basic Criminal Group -->
+          <div id="mainBasicCriminalSection">
+            <h4 class="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-1.5">Basic Criminal</h4>
+            <!-- Clickable Accordion Bar -->
+            <div id="btnMainCriminalToggle" class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex justify-between items-center text-xs cursor-pointer select-none hover:bg-slate-100 transition">
+              <span class="font-bold text-slate-600 flex items-center gap-2">
+                <svg id="iconMainCriminalCaret" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                Checks Included
+              </span>
+              <span class="text-[9px] font-bold text-slate-400 uppercase">Renewal</span>
+            </div>
+            <div id="wrapperMainCriminalList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
+              <div id="mainNationalCrimDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
+                <span>National Criminal</span>
+                <span class="text-slate-400 italic font-semibold">Included</span>
+              </div>
+              <div id="mainOigDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
+                <span>OIG Department Of Health And Human Services</span>
+                <span class="text-slate-400 italic font-semibold">Included</span>
+              </div>
+              <div id="mainCriminalCustomList"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Motor Vehicle Group -->
+          <div id="mainMotorSection" class="hidden">
+            <h4 class="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-1.5">Motor Vehicle</h4>
+            <!-- Clickable Accordion Bar -->
+            <div id="btnMainMotorToggle" class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex justify-between items-center text-xs cursor-pointer select-none hover:bg-slate-100 transition">
+              <span class="font-bold text-slate-600 flex items-center gap-2">
+                <svg id="iconMainMotorCaret" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                Checks Included
+              </span>
+              <span class="text-[9px] font-bold text-slate-400 uppercase">Renewal</span>
+            </div>
+            <div id="wrapperMainMotorList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
+              <div id="mainMotorCustomList"></div>
+            </div>
+          </div>
+
+          <!-- Dynamic Advanced Criminal Group -->
+          <div id="mainAdvancedCriminalSection" class="hidden">
+            <h4 class="text-[11px] font-bold text-blue-600 uppercase tracking-wider mb-1.5">Advanced Criminal</h4>
+            <!-- Clickable Accordion Bar -->
+            <div id="btnMainAdvancedCriminalToggle" class="bg-slate-50 border border-slate-200 rounded-lg p-2.5 flex justify-between items-center text-xs cursor-pointer select-none hover:bg-slate-100 transition">
+              <span class="font-bold text-slate-600 flex items-center gap-2">
+                <svg id="iconMainAdvancedCriminalCaret" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                Checks Included
+              </span>
+              <span class="text-[9px] font-bold text-slate-400 uppercase">Renewal</span>
+            </div>
+            <div id="wrapperMainAdvancedCriminalList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
+              <div id="mainAdvancedCriminalCustomList"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Cost Segment (Disclaimer stacked underneath Total Cost without box border styling) -->
+      <div class="border-t border-slate-200 mt-8 pt-6 flex flex-col items-end gap-2 relative">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-slate-600">Total Cost*:</span>
+          <!-- Box/grey border removed, Green color restored -->
+          <button id="btnMainCaret" class="flex items-center gap-1 hover:text-blue-600 text-emerald-600 py-1 font-bold transition focus:outline-none select-none">
+            <span id="txtMainTotal" class="text-emerald-600 font-extrabold text-sm">$1.00</span>
+            <svg id="iconMainCaret" class="w-3.5 h-3.5 text-slate-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+
+        <!-- Cost Breakdown Popover with Nested Dropdown for "Added by modify" -->
+        <div id="dropdownMainBreakdown" class="hidden absolute right-0 bottom-16 z-35 w-72 bg-white rounded-xl shadow-2xl border border-slate-200 p-4">
+          <div class="text-xs font-bold text-slate-800 pb-2 mb-2 border-b border-slate-100">Cost Breakdown</div>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between text-slate-500 font-medium">
+              <span>Package Price</span>
+              <span>$1.00</span>
+            </div>
+            
+            <!-- Conditional "Added by modify" section -->
+            <div id="addedByModifyContainer" class="hidden border-t border-slate-100 pt-2 mt-2">
+              <div class="flex justify-between items-center">
+                <button id="btnToggleAddedByModify" class="flex items-center gap-1 text-slate-700 font-bold hover:text-blue-600 transition focus:outline-none">
+                  <span>Added by modify</span>
+                  <svg id="iconAddedByModify" class="w-3 h-3 text-slate-500 transform transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <span id="txtAddedByModifySum" class="text-blue-600 font-bold">+$0.00</span>
+              </div>
+              
+              <!-- Inner sub-dropdown for selected custom checks -->
+              <div id="addedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100">
+                <!-- Dynamically populated rows -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aligned Disclaimer Text underneath Total Cost -->
+        <div class="text-[11px] font-medium text-slate-400 text-right w-full mt-1">
+          *Package Cost Does Not Include Pass-Through, Health Screening Fees, And Taxes.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Outer Actions Footer -->
+    <div class="bg-slate-50 border-t border-slate-200 px-8 py-4 flex justify-end gap-3">
+      <button class="bg-white border border-blue-600 hover:bg-blue-50 text-blue-600 text-xs font-bold px-4 py-2 rounded-lg transition">Cancel</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-2 rounded-lg shadow transition">Next</button>
+    </div>
+
+  </div>
+
+  <!-- SLIDE-OUT "REQUEST CHECKS" UNIFIED DRAWER -->
+  <div id="drawerOverlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-[1px] z-40"></div>
+  <div id="modifyDrawer" class="hidden fixed top-0 right-0 h-full w-full max-w-[460px] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+    
+    <!-- Drawer Title bar -->
+    <div class="p-5 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
+      <h3 class="text-sm font-extrabold text-[#1e293b]">Request Checks</h3>
+      <button id="btnCloseDrawer" class="text-xs font-bold text-slate-500 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 px-2.5 py-1.5 rounded-lg transition">Close</button>
+    </div>
+
+    <!-- Scrollable content window (Single continuous custom list view) -->
+    <div class="flex-1 overflow-y-auto p-5 space-y-6 custom-scrollbar bg-white">
+      
+      <input id="searchBackground" type="text" placeholder="Search background screenings" class="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-2.5 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500" />
+
+      <!-- Consolidated Unified Screening Categories -->
+      <div id="drawerCategoriesContainer" class="space-y-6">
+        <!-- Categories and custom uncheckable elements render dynamically here -->
+      </div>
+    </div>
+
+    <!-- Right-Aligned Drawer Footer Action Area (Caret box outline removed, green color applied) -->
+    <div class="border-t border-slate-100 p-5 bg-slate-50 flex flex-col items-end gap-2 relative">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold text-slate-600">Total Cost*:</span>
+        <button id="btnDrawerCaret" class="flex items-center gap-1 hover:text-blue-600 text-emerald-600 py-1 font-bold transition focus:outline-none select-none">
+          <span id="txtDrawerTotal" class="text-emerald-600 font-extrabold text-sm">$1.00</span>
+          <svg id="iconDrawerCaret" class="w-3.5 h-3.5 text-slate-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
+
+      <!-- Cost Breakdown Drawer Dropdown -->
+      <div id="dropdownDrawerBreakdown" class="hidden absolute right-5 bottom-32 z-35 w-72 bg-white rounded-xl shadow-2xl border border-slate-200 p-4">
+        <div class="text-xs font-bold text-slate-800 pb-2 mb-2 border-b border-slate-100">Cost Breakdown</div>
+        <div class="space-y-2 text-xs">
+          <div class="flex justify-between text-slate-500 font-medium">
+            <span>Package Price</span>
+            <span>$1.00</span>
+          </div>
+          
+          <!-- Conditional "Added by modify" section -->
+          <div id="drawerAddedByModifyContainer" class="hidden border-t border-slate-100 pt-2 mt-2">
+            <div class="flex justify-between items-center">
+              <button id="btnToggleDrawerAddedByModify" class="flex items-center gap-1 text-slate-700 font-bold hover:text-blue-600 transition focus:outline-none">
+                <span>Added by modify</span>
+                <svg id="iconDrawerAddedByModify" class="w-3 h-3 text-slate-500 transform transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <span id="txtDrawerAddedByModifySum" class="text-blue-600 font-bold">+$0.00</span>
+            </div>
+            
+            <!-- Inner sub-dropdown for selected custom checks -->
+            <div id="drawerAddedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100">
+              <!-- Dynamically populated rows -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-[9.5px] text-slate-400 leading-normal text-right">
+        *Package Cost Does Not Include Pass-Through, Health Screening Fees, And Taxes.
+      </p>
+
+      <div class="flex justify-end gap-3 mt-2 w-full">
+        <!-- Close/Cancel Drawer Button -->
+        <button id="btnCancelDrawer" class="flex items-center justify-center gap-1.5 bg-white border border-blue-600 hover:bg-blue-50 text-blue-600 text-xs font-bold py-2 px-4 rounded-lg shadow-sm transition">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          Cancel
+        </button>
+        
+        <!-- Apply Next Drawer Button -->
+        <button id="btnApplyDrawer" class="flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-5 rounded-lg shadow transition">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+          Next
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const appState = {
+      basePackagePrice: 1.00,
+      customModifications: [
+        // Identity (Defaults included, but configurable)
+        { id: 'identity-sol', category: 'Identity', name: 'Identity Solution', price: 1.00, checked: false, isDefault: false },
+        { id: 'ss-trace', category: 'Identity', name: 'Social Security Trace', price: 1.10, checked: true, isDefault: true },
+        
+        // Motor Vehicle
+        { id: 'driving-rec', category: 'Motor Vehicle', name: 'Driving Record', price: 8.00, checked: false, isDefault: false },
+        
+        // Basic Search modifications (National Crim and OIG HHS are defaults)
+        { id: 'child-abuse', category: 'Basic Search', name: 'Child Abuse Registry - Pennsylvania', price: 2.00, checked: false, isDefault: false },
+        { id: 'fda-debar', category: 'Basic Search', name: 'FDA Debarment', price: 3.00, checked: false, isDefault: false }, 
+        { id: 'gsa-sam', category: 'Basic Search', name: 'GSA/SAM List', price: 8.00, checked: false, isDefault: false },
+        { id: 'healthcare', category: 'Basic Search', name: 'Healthcare Sanctions Level 3', price: 6.00, checked: false, isDefault: false },
+        { id: 'national-crim', category: 'Basic Search', name: 'National Criminal', price: 7.00, checked: true, isDefault: true },
+        { id: 'oig-hhs', category: 'Basic Search', name: 'OIG Department Of Health And Human Services', price: 4.00, checked: true, isDefault: true },
+        { id: 'pa-patch', category: 'Basic Search', name: 'Pa Patch', price: 6.00, checked: false, isDefault: false },
+        { id: 'sanctions-watchlist', category: 'Basic Search', name: 'Sanctions And Watchlist Search', price: 6.00, checked: false, isDefault: false },
+        { id: 'sex-offender', category: 'Basic Search', name: 'Sex Offender', price: 4.00, checked: false, isDefault: false },
+
+        // Advanced Criminal
+        { id: 'abuse-wisconsin', category: 'Advanced Criminal', name: 'Abuse Registry - Wisconsin', price: 8.00, checked: false, isDefault: false },
+        { id: 'adult-abuse', category: 'Advanced Criminal', name: 'Adult Abuse Registry', price: 9.00, checked: false, isDefault: false },
+        { id: 'colorado-caps', category: 'Advanced Criminal', name: 'Colorado CAPS', price: 8.00, checked: false, isDefault: false },
+        { id: 'county-civil', category: 'Advanced Criminal', name: 'County Civil', price: 4.00, checked: false, isDefault: false },
+        { id: 'criminal-county', category: 'Advanced Criminal', name: 'Criminal County', price: 8.67, checked: false, isDefault: false },
+        { id: 'federal-civil', category: 'Advanced Criminal', name: 'Federal Civil', price: 8.00, checked: false, isDefault: false },
+        { id: 'federal-criminal', category: 'Advanced Criminal', name: 'Federal Criminal', price: 1.22, checked: false, isDefault: false },
+        { id: 'state-criminal', category: 'Advanced Criminal', name: 'State Criminal', price: 2.00, checked: false, isDefault: false }
+      ],
+      tempSelections: {},
+      addedByModifyExpanded: true,
+      drawerAddedByModifyExpanded: true,
+      expandedSections: {
+        identity: false,
+        basicCriminal: false,
+        motorVehicle: false,
+        advancedCriminal: false
+      }
+    };
+
+    // DOM Elements
+    const btnModify = document.getElementById('btnModify');
+    const modifyDrawer = document.getElementById('modifyDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const btnCloseDrawer = document.getElementById('btnCloseDrawer');
+    const btnCancelDrawer = document.getElementById('btnCancelDrawer');
+    const btnApplyDrawer = document.getElementById('btnApplyDrawer');
+    
+    // Cost UI Elements (Main dashboard)
+    const txtMainTotal = document.getElementById('txtMainTotal');
+    const btnMainCaret = document.getElementById('btnMainCaret');
+    const iconMainCaret = document.getElementById('iconMainCaret');
+    const dropdownMainBreakdown = document.getElementById('dropdownMainBreakdown');
+    
+    // Cost UI Elements (Drawer sticky footer)
+    const txtDrawerTotal = document.getElementById('txtDrawerTotal');
+    const btnDrawerCaret = document.getElementById('btnDrawerCaret');
+    const iconDrawerCaret = document.getElementById('iconDrawerCaret');
+    const dropdownDrawerBreakdown = document.getElementById('dropdownDrawerBreakdown');
+    
+    // Cost sub-dropdowns
+    const addedByModifyContainer = document.getElementById('addedByModifyContainer');
+    const btnToggleAddedByModify = document.getElementById('btnToggleAddedByModify');
+    const iconAddedByModify = document.getElementById('iconAddedByModify');
+    const txtAddedByModifySum = document.getElementById('txtAddedByModifySum');
+    const addedByModifyList = document.getElementById('addedByModifyList');
+
+    const drawerAddedByModifyContainer = document.getElementById('drawerAddedByModifyContainer');
+    const btnToggleDrawerAddedByModify = document.getElementById('btnToggleDrawerAddedByModify');
+    const iconDrawerAddedByModify = document.getElementById('iconDrawerAddedByModify');
+    const txtDrawerAddedByModifySum = document.getElementById('txtDrawerAddedByModifySum');
+    const drawerAddedByModifyList = document.getElementById('drawerAddedByModifyList');
+
+    // Dynamic Lists on Dashboard
+    const mainIdentitySection = document.getElementById('mainIdentitySection');
+    const mainIdentityDefaultRow = document.getElementById('mainIdentityDefaultRow');
+    const mainIdentityCustomList = document.getElementById('mainIdentityCustomList');
+    
+    const mainBasicCriminalSection = document.getElementById('mainBasicCriminalSection');
+    const mainNationalCrimDefaultRow = document.getElementById('mainNationalCrimDefaultRow');
+    const mainOigDefaultRow = document.getElementById('mainOigDefaultRow');
+    const mainCriminalCustomList = document.getElementById('mainCriminalCustomList');
+    
+    const mainMotorCustomList = document.getElementById('mainMotorCustomList');
+    const mainMotorSection = document.getElementById('mainMotorSection');
+    const motorVehicleTab = document.getElementById('motorVehicleTab');
+    
+    const mainAdvancedCriminalCustomList = document.getElementById('mainAdvancedCriminalCustomList');
+    const mainAdvancedCriminalSection = document.getElementById('mainAdvancedCriminalSection');
+    const advancedCriminalTab = document.getElementById('advancedCriminalTab');
+
+    // Search
+    const searchBackground = document.getElementById('searchBackground');
+
+    function init() {
+      // General Event Handlers
+      btnModify.addEventListener('click', openDrawer);
+      btnCloseDrawer.addEventListener('click', closeDrawer);
+      btnCancelDrawer.addEventListener('click', closeDrawer);
+      btnApplyDrawer.addEventListener('click', saveDrawerModifications);
+
+      // Main Caret Breakdown Menu Toggle
+      btnMainCaret.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = dropdownMainBreakdown.classList.contains('hidden');
+        if (isHidden) {
+          dropdownMainBreakdown.classList.remove('hidden');
+          iconMainCaret.classList.add('rotate-180');
+        } else {
+          dropdownMainBreakdown.classList.add('hidden');
+          iconMainCaret.classList.remove('rotate-180');
+        }
+      });
+
+      // Drawer Caret Breakdown Menu Toggle
+      btnDrawerCaret.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = dropdownDrawerBreakdown.classList.contains('hidden');
+        if (isHidden) {
+          dropdownDrawerBreakdown.classList.remove('hidden');
+          iconDrawerCaret.classList.add('rotate-180');
+        } else {
+          dropdownDrawerBreakdown.classList.add('hidden');
+          iconDrawerCaret.classList.remove('rotate-180');
+        }
+      });
+
+      // Click Outside Closes both Breakdown Dropdowns
+      document.addEventListener('click', () => {
+        dropdownMainBreakdown.classList.add('hidden');
+        iconMainCaret.classList.remove('rotate-180');
+        dropdownDrawerBreakdown.classList.add('hidden');
+        iconDrawerCaret.classList.remove('rotate-180');
+      });
+
+      // Added by Modify Inner Collapsible Action (Main page)
+      btnToggleAddedByModify.addEventListener('click', (e) => {
+        e.stopPropagation();
+        appState.addedByModifyExpanded = !appState.addedByModifyExpanded;
+        refreshAddedByModifyCollapseState('main');
+      });
+
+      // Added by Modify Inner Collapsible Action (Drawer view)
+      btnToggleDrawerAddedByModify.addEventListener('click', (e) => {
+        e.stopPropagation();
+        appState.drawerAddedByModifyExpanded = !appState.drawerAddedByModifyExpanded;
+        refreshAddedByModifyCollapseState('drawer');
+      });
+
+      // Accordion Event Listeners for the Main UI Checklists
+      document.getElementById('btnMainIdentityToggle').addEventListener('click', () => toggleMainSection('identity'));
+      document.getElementById('btnMainCriminalToggle').addEventListener('click', () => toggleMainSection('basicCriminal'));
+      document.getElementById('btnMainMotorToggle').addEventListener('click', () => toggleMainSection('motorVehicle'));
+      document.getElementById('btnMainAdvancedCriminalToggle').addEventListener('click', () => toggleMainSection('advancedCriminal'));
+
+      // Live Drawer search logic (filters all list rows)
+      searchBackground.addEventListener('input', (e) => {
+        renderDrawerCategories(e.target.value.toLowerCase().trim());
+      });
+
+      // Initial page draw
+      refreshMainView();
+    }
+
+    // Dynamic Drawer Category list render engine
+    function renderDrawerCategories(filterText = '') {
+      const container = document.getElementById('drawerCategoriesContainer');
+      container.innerHTML = '';
+
+      const categories = ['Identity', 'Motor Vehicle', 'Basic Search', 'Advanced Criminal'];
+      
+      categories.forEach(cat => {
+        const checksInCat = appState.customModifications.filter(mod => {
+          if (mod.category !== cat) return false;
+          if (filterText) {
+            return mod.name.toLowerCase().includes(filterText);
+          }
+          return true;
+        });
+
+        if (checksInCat.length === 0) return; // Skip empty blocks during searches
+
+        const catSection = document.createElement('div');
+        catSection.className = 'space-y-2.5 category-section';
+
+        // Select Category SVGs matching Screenshot 1 and 2
+        let catIconSvg = '';
+        if (cat === 'Identity') {
+          catIconSvg = `<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5L12 3L10 6z" /></svg>`;
+        } else if (cat === 'Motor Vehicle') {
+          catIconSvg = `<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>`;
+        } else if (cat === 'Basic Search') {
+          catIconSvg = `<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>`;
+        } else if (cat === 'Advanced Criminal') {
+          catIconSvg = `<svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`;
+        }
+
+        catSection.innerHTML = `
+          <div class="flex items-center gap-1.5 text-slate-700 font-bold text-xs uppercase tracking-wider">
+            ${catIconSvg}
+            ${cat}
+          </div>
+        `;
+
+        const itemsList = document.createElement('div');
+        itemsList.className = 'space-y-1.5';
+
+        checksInCat.forEach(mod => {
+          const isChecked = appState.tempSelections[mod.id] !== undefined ? appState.tempSelections[mod.id] : mod.checked;
+          const itemRow = document.createElement('div');
+
+          if (mod.isDefault) {
+            // Pre-selected uncheckable package check styling (Matches light blue checkbox in image_bc6f88.png)
+            itemRow.className = "flex items-center justify-between p-3.5 bg-[#f8fafc] rounded-xl border border-slate-100 text-xs select-none";
+            itemRow.innerHTML = `
+              <div class="flex items-center gap-3">
+                <div class="flex items-center justify-center w-5 h-5 rounded bg-[#93c5fd] text-white cursor-not-allowed select-none transition">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="font-semibold text-slate-600">${mod.name}</span>
+              </div>
+              <span class="font-bold text-blue-600 flex items-center gap-1">$ ${mod.price.toFixed(mod.price % 1 === 0 ? 0 : 2)} <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+            `;
+          } else {
+            // User-toggleable checks (Solid blue when checked, light outline when unchecked)
+            itemRow.className = "flex items-center justify-between p-3.5 bg-[#f8fafc] hover:bg-slate-50 rounded-xl border border-slate-100 text-xs cursor-pointer select-none";
+            
+            itemRow.onclick = () => {
+              appState.tempSelections[mod.id] = !isChecked;
+              renderDrawerCategories(filterText);
+              calculateDrawerLiveTotal();
+            };
+
+            let checkboxMarkup = '';
+            if (isChecked) {
+              checkboxMarkup = `
+                <div class="flex items-center justify-center w-5 h-5 rounded bg-blue-600 text-white transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+              `;
+            } else {
+              checkboxMarkup = `
+                <div class="w-5 h-5 rounded border border-slate-300 bg-slate-100 transition-colors"></div>
+              `;
+            }
+
+            itemRow.innerHTML = `
+              <div class="flex items-center gap-3">
+                ${checkboxMarkup}
+                <span class="font-semibold text-slate-600">${mod.name}</span>
+              </div>
+              <span class="font-bold text-blue-600 flex items-center gap-1">$ ${mod.price.toFixed(mod.price % 1 === 0 ? 0 : 2)} <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+            `;
+          }
+
+          itemsList.appendChild(itemRow);
+        });
+
+        catSection.appendChild(itemsList);
+        container.appendChild(catSection);
+      });
+    }
+
+    function openDrawer() {
+      // Populate temp selections from persistent checked state
+      appState.customModifications.forEach(mod => {
+        appState.tempSelections[mod.id] = mod.checked;
+      });
+
+      renderDrawerCategories();
+      calculateDrawerLiveTotal();
+      modifyDrawer.classList.remove('hidden');
+      drawerOverlay.classList.remove('hidden');
+      setTimeout(() => {
+        modifyDrawer.classList.remove('translate-x-full');
+      }, 20);
+    }
+
+    function closeDrawer() {
+      modifyDrawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        modifyDrawer.classList.add('hidden');
+        drawerOverlay.classList.add('hidden');
+      }, 300);
+    }
+
+    function calculateDrawerLiveTotal() {
+      let activeSum = appState.basePackagePrice;
+      let addedModSum = 0;
+
+      // Reset list in drawer cost breakdown
+      drawerAddedByModifyList.innerHTML = '';
+
+      appState.customModifications.forEach(mod => {
+        const isCurrentlyChecked = appState.tempSelections[mod.id] !== undefined ? appState.tempSelections[mod.id] : mod.checked;
+        
+        // Default items do not add extra cost even if checked
+        if (isCurrentlyChecked && !mod.isDefault) {
+          activeSum += mod.price;
+          addedModSum += mod.price;
+
+          // Append to live breakdown
+          drawerAddedByModifyList.innerHTML += `
+            <div class="flex justify-between text-slate-500 font-medium pl-1">
+              <span>• ${mod.name}</span>
+              <span class="text-slate-600 font-bold">+$${mod.price.toFixed(2)}</span>
+            </div>
+          `;
+        }
+      });
+
+      txtDrawerTotal.textContent = `$${activeSum.toFixed(2)}`;
+
+      if (addedModSum > 0) {
+        drawerAddedByModifyContainer.classList.remove('hidden');
+        txtDrawerAddedByModifySum.textContent = `+$${addedModSum.toFixed(2)}`;
+        refreshAddedByModifyCollapseState('drawer');
+      } else {
+        drawerAddedByModifyContainer.classList.add('hidden');
+      }
+    }
+
+    function saveDrawerModifications() {
+      appState.customModifications.forEach(mod => {
+        if (appState.tempSelections[mod.id] !== undefined) {
+          mod.checked = appState.tempSelections[mod.id];
+        }
+      });
+      refreshMainView();
+      closeDrawer();
+    }
+
+    function toggleMainSection(sectionKey) {
+      appState.expandedSections[sectionKey] = !appState.expandedSections[sectionKey];
+      refreshMainSectionsCollapseState();
+    }
+
+    // Refresh expansion / collapse UI state based on state tracker
+    function refreshMainSectionsCollapseState() {
+      const config = {
+        identity: {
+          wrapper: document.getElementById('wrapperMainIdentityList'),
+          icon: document.getElementById('iconMainIdentityCaret')
+        },
+        basicCriminal: {
+          wrapper: document.getElementById('wrapperMainCriminalList'),
+          icon: document.getElementById('iconMainCriminalCaret')
+        },
+        motorVehicle: {
+          wrapper: document.getElementById('wrapperMainMotorList'),
+          icon: document.getElementById('iconMainMotorCaret')
+        },
+        advancedCriminal: {
+          wrapper: document.getElementById('wrapperMainAdvancedCriminalList'),
+          icon: document.getElementById('iconMainAdvancedCriminalCaret')
+        }
+      };
+
+      for (const key in config) {
+        const isExpanded = appState.expandedSections[key];
+        const item = config[key];
+        if (!item.wrapper || !item.icon) continue;
+
+        if (isExpanded) {
+          item.wrapper.classList.remove('hidden');
+          item.icon.classList.add('rotate-180');
+        } else {
+          item.wrapper.classList.add('hidden');
+          item.icon.classList.remove('rotate-180');
+        }
+      }
+    }
+
+    function refreshAddedByModifyCollapseState(type) {
+      if (type === 'main') {
+        if (appState.addedByModifyExpanded) {
+          addedByModifyList.classList.remove('hidden');
+          iconAddedByModify.classList.add('rotate-180');
+        } else {
+          addedByModifyList.classList.add('hidden');
+          iconAddedByModify.classList.remove('rotate-180');
+        }
+      } else if (type === 'drawer') {
+        if (appState.drawerAddedByModifyExpanded) {
+          drawerAddedByModifyList.classList.remove('hidden');
+          iconDrawerAddedByModify.classList.add('rotate-180');
+        } else {
+          drawerAddedByModifyList.classList.add('hidden');
+          iconDrawerAddedByModify.classList.remove('rotate-180');
+        }
+      }
+    }
+
+    function refreshMainView() {
+      let finalSum = appState.basePackagePrice;
+      let addedModSum = 0;
+
+      // Reset main card layout lists
+      mainIdentityCustomList.innerHTML = '';
+      mainCriminalCustomList.innerHTML = '';
+      mainMotorCustomList.innerHTML = '';
+      mainAdvancedCriminalCustomList.innerHTML = '';
+      
+      // Reset dropdown list
+      addedByModifyList.innerHTML = '';
+
+      let hasMotorMod = false;
+      let hasAdvancedCrimMod = false;
+      let hasAnyCustomMod = false;
+
+      // Handle visibility of default row parameters based on custom modified checkboxes
+      const ssTraceMod = appState.customModifications.find(m => m.id === 'ss-trace');
+      if (ssTraceMod && ssTraceMod.checked) {
+        mainIdentityDefaultRow.classList.remove('hidden');
+        mainIdentitySection.classList.remove('hidden');
+      } else {
+        mainIdentityDefaultRow.classList.add('hidden');
+        if (mainIdentityCustomList.children.length === 0) {
+          mainIdentitySection.classList.add('hidden');
+        }
+      }
+
+      const natCrimMod = appState.customModifications.find(m => m.id === 'national-crim');
+      if (natCrimMod && natCrimMod.checked) {
+        mainNationalCrimDefaultRow.classList.remove('hidden');
+      } else {
+        mainNationalCrimDefaultRow.classList.add('hidden');
+      }
+
+      const oigMod = appState.customModifications.find(m => m.id === 'oig-hhs');
+      if (oigMod && oigMod.checked) {
+        mainOigDefaultRow.classList.remove('hidden');
+      } else {
+        mainOigDefaultRow.classList.add('hidden');
+      }
+
+      if ((!natCrimMod || !natCrimMod.checked) && (!oigMod || !oigMod.checked)) {
+        mainBasicCriminalSection.classList.add('hidden');
+      } else {
+        mainBasicCriminalSection.classList.remove('hidden');
+      }
+
+      appState.customModifications.forEach(mod => {
+        if (mod.checked && !mod.isDefault) {
+          finalSum += mod.price;
+          addedModSum += mod.price;
+          hasAnyCustomMod = true;
+
+          // Append check with exact pricing inside the dropdown cost breakdown details
+          addedByModifyList.innerHTML += `
+            <div class="flex justify-between text-slate-500 font-medium pl-1">
+              <span>• ${mod.name}</span>
+              <span class="text-slate-600 font-bold">+$${mod.price.toFixed(2)}</span>
+            </div>
+          `;
+
+          // Generate check listing row (prices omitted and replaced by dashes '---' under the Renewal column)
+          const rowHtml = `
+            <div class="py-2.5 flex justify-between text-slate-700 font-medium">
+              <span>${mod.name}</span>
+              <span class="text-slate-400 font-semibold">---</span>
+            </div>
+          `;
+
+          if (mod.category === 'Identity') {
+            mainIdentityCustomList.innerHTML += rowHtml;
+            mainIdentitySection.classList.remove('hidden');
+          } else if (mod.category === 'Basic Search') { // Corrected from Basic Criminal to Basic Search to match mod.category state
+            mainCriminalCustomList.innerHTML += rowHtml;
+            mainBasicCriminalSection.classList.remove('hidden');
+          } else if (mod.category === 'Motor Vehicle') {
+            hasMotorMod = true;
+            mainMotorCustomList.innerHTML += rowHtml;
+          } else if (mod.category === 'Advanced Criminal') {
+            hasAdvancedCrimMod = true;
+            mainAdvancedCriminalCustomList.innerHTML += rowHtml;
+          }
+        }
+      });
+
+      // Toggle conditional visibility of "Added by modify" option in Main Breakdown Dropdown
+      if (hasAnyCustomMod) {
+        addedByModifyContainer.classList.remove('hidden');
+        txtAddedByModifySum.textContent = `+$${addedModSum.toFixed(2)}`;
+        refreshAddedByModifyCollapseState('main');
+      } else {
+        addedByModifyContainer.classList.add('hidden');
+      }
+
+      // Handle custom section blocks dynamically
+      toggleSection(hasMotorMod, mainMotorSection, motorVehicleTab);
+      toggleSection(hasAdvancedCrimMod, mainAdvancedCriminalSection, advancedCriminalTab);
+
+      txtMainTotal.textContent = `$${finalSum.toFixed(2)}`;
+
+      // Apply initial minimized configuration classes
+      refreshMainSectionsCollapseState();
+    }
+
+    function toggleSection(hasMod, contentSection, tabIndicator) {
+      if (hasMod) {
+        contentSection.classList.remove('hidden');
+        tabIndicator.classList.remove('hidden');
+        tabIndicator.classList.add('flex');
+      } else {
+        contentSection.classList.add('hidden');
+        tabIndicator.classList.add('hidden');
+        tabIndicator.classList.remove('flex');
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
