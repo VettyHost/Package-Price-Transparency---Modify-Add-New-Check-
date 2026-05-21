@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
     .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
   </style>
 </head>
@@ -143,7 +143,7 @@
             <div id="wrapperMainIdentityList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
               <div id="mainIdentityDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
                 <span>Social Security Trace</span>
-                <span class="text-slate-400 italic font-semibold">Included</span>
+                <span class="text-slate-400 italic font-semibold"></span>
               </div>
               <div id="mainIdentityCustomList"></div>
             </div>
@@ -163,11 +163,11 @@
             <div id="wrapperMainCriminalList" class="hidden mt-1 divide-y divide-slate-100 text-xs px-2">
               <div id="mainNationalCrimDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
                 <span>National Criminal</span>
-                <span class="text-slate-400 italic font-semibold">Included</span>
+                <span class="text-slate-400 italic font-semibold"></span>
               </div>
               <div id="mainOigDefaultRow" class="py-2 flex justify-between text-slate-500 font-medium">
                 <span>OIG Department Of Health And Human Services</span>
-                <span class="text-slate-400 italic font-semibold">Included</span>
+                <span class="text-slate-400 italic font-semibold"></span>
               </div>
               <div id="mainCriminalCustomList"></div>
             </div>
@@ -230,16 +230,15 @@
             
             <!-- Conditional "Added by modify" section -->
             <div id="addedByModifyContainer" class="hidden border-t border-slate-100 pt-2 mt-2">
-              <div class="flex justify-between items-center">
+              <div class="flex justify-between items-center mb-1">
                 <button id="btnToggleAddedByModify" class="flex items-center gap-1 text-slate-700 font-bold hover:text-blue-600 transition focus:outline-none">
                   <span>Added by modify</span>
                   <svg id="iconAddedByModify" class="w-3 h-3 text-slate-500 transform transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                 </button>
-                <span id="txtAddedByModifySum" class="text-blue-600 font-bold">+$0.00</span>
               </div>
               
-              <!-- Inner sub-dropdown for selected custom checks -->
-              <div id="addedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100">
+              <!-- Inner sub-dropdown for selected custom checks (Corrected max height for up to 5 items maximum before scrolling) -->
+              <div id="addedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100 max-h-[110px] overflow-y-auto custom-scrollbar pr-1">
                 <!-- Dynamically populated rows -->
               </div>
             </div>
@@ -304,16 +303,15 @@
           
           <!-- Conditional "Added by modify" section -->
           <div id="drawerAddedByModifyContainer" class="hidden border-t border-slate-100 pt-2 mt-2">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mb-1">
               <button id="btnToggleDrawerAddedByModify" class="flex items-center gap-1 text-slate-700 font-bold hover:text-blue-600 transition focus:outline-none">
                 <span>Added by modify</span>
                 <svg id="iconDrawerAddedByModify" class="w-3 h-3 text-slate-500 transform transition-transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
               </button>
-              <span id="txtDrawerAddedByModifySum" class="text-blue-600 font-bold">+$0.00</span>
             </div>
             
-            <!-- Inner sub-dropdown for selected custom checks -->
-            <div id="drawerAddedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100">
+            <!-- Inner sub-dropdown for selected custom checks (Corrected max height for up to 5 items maximum before scrolling) -->
+            <div id="drawerAddedByModifyList" class="mt-1.5 space-y-1.5 pl-2 border-l border-slate-100 max-h-[110px] overflow-y-auto custom-scrollbar pr-1">
               <!-- Dynamically populated rows -->
             </div>
           </div>
@@ -408,13 +406,11 @@
     const addedByModifyContainer = document.getElementById('addedByModifyContainer');
     const btnToggleAddedByModify = document.getElementById('btnToggleAddedByModify');
     const iconAddedByModify = document.getElementById('iconAddedByModify');
-    const txtAddedByModifySum = document.getElementById('txtAddedByModifySum');
     const addedByModifyList = document.getElementById('addedByModifyList');
 
     const drawerAddedByModifyContainer = document.getElementById('drawerAddedByModifyContainer');
     const btnToggleDrawerAddedByModify = document.getElementById('btnToggleDrawerAddedByModify');
     const iconDrawerAddedByModify = document.getElementById('iconDrawerAddedByModify');
-    const txtDrawerAddedByModifySum = document.getElementById('txtDrawerAddedByModifySum');
     const drawerAddedByModifyList = document.getElementById('drawerAddedByModifyList');
 
     // Dynamic Lists on Dashboard
@@ -556,7 +552,7 @@
           const itemRow = document.createElement('div');
 
           if (mod.isDefault) {
-            // Pre-selected uncheckable package check styling (Matches light blue checkbox in image_bc6f88.png)
+            // Pre-selected uncheckable package check styling
             itemRow.className = "flex items-center justify-between p-3.5 bg-[#f8fafc] rounded-xl border border-slate-100 text-xs select-none";
             itemRow.innerHTML = `
               <div class="flex items-center gap-3">
@@ -649,11 +645,11 @@
           activeSum += mod.price;
           addedModSum += mod.price;
 
-          // Append to live breakdown
+          // Append to live breakdown (Enforcing 24px gap, removing bullets, and adding truncation on hover)
           drawerAddedByModifyList.innerHTML += `
-            <div class="flex justify-between text-slate-500 font-medium pl-1">
-              <span>• ${mod.name}</span>
-              <span class="text-slate-600 font-bold">+$${mod.price.toFixed(2)}</span>
+            <div class="flex justify-between items-center text-slate-500 font-medium pl-1 gap-6 w-full cursor-help hover:text-blue-600 transition-colors duration-150" title="${mod.name}">
+              <span class="truncate min-w-0 flex-1">${mod.name}</span>
+              <span class="text-slate-600 font-bold shrink-0">+$${mod.price.toFixed(2)}</span>
             </div>
           `;
         }
@@ -663,7 +659,6 @@
 
       if (addedModSum > 0) {
         drawerAddedByModifyContainer.classList.remove('hidden');
-        txtDrawerAddedByModifySum.textContent = `+$${addedModSum.toFixed(2)}`;
         refreshAddedByModifyCollapseState('drawer');
       } else {
         drawerAddedByModifyContainer.classList.add('hidden');
@@ -796,11 +791,11 @@
           addedModSum += mod.price;
           hasAnyCustomMod = true;
 
-          // Append check with exact pricing inside the dropdown cost breakdown details
+          // Append check with exact pricing inside the dropdown cost breakdown details (Enforcing 24px gap, removing bullets, and adding truncation on hover)
           addedByModifyList.innerHTML += `
-            <div class="flex justify-between text-slate-500 font-medium pl-1">
-              <span>• ${mod.name}</span>
-              <span class="text-slate-600 font-bold">+$${mod.price.toFixed(2)}</span>
+            <div class="flex justify-between items-center text-slate-500 font-medium pl-1 gap-6 w-full cursor-help hover:text-blue-600 transition-colors duration-150" title="${mod.name}">
+              <span class="truncate min-w-0 flex-1">${mod.name}</span>
+              <span class="text-slate-600 font-bold shrink-0">+$${mod.price.toFixed(2)}</span>
             </div>
           `;
 
@@ -815,7 +810,7 @@
           if (mod.category === 'Identity') {
             mainIdentityCustomList.innerHTML += rowHtml;
             mainIdentitySection.classList.remove('hidden');
-          } else if (mod.category === 'Basic Search') { // Corrected from Basic Criminal to Basic Search to match mod.category state
+          } else if (mod.category === 'Basic Search') { 
             mainCriminalCustomList.innerHTML += rowHtml;
             mainBasicCriminalSection.classList.remove('hidden');
           } else if (mod.category === 'Motor Vehicle') {
@@ -831,7 +826,6 @@
       // Toggle conditional visibility of "Added by modify" option in Main Breakdown Dropdown
       if (hasAnyCustomMod) {
         addedByModifyContainer.classList.remove('hidden');
-        txtAddedByModifySum.textContent = `+$${addedModSum.toFixed(2)}`;
         refreshAddedByModifyCollapseState('main');
       } else {
         addedByModifyContainer.classList.add('hidden');
